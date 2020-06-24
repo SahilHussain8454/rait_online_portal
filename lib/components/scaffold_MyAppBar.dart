@@ -5,6 +5,7 @@ class MyAppBar extends StatelessWidget {
   MyAppBar({@required this.label, @required this.containerContent});
   final String label;
   final Container containerContent;
+  final _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +23,33 @@ class MyAppBar extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 10.0,
+              width: 35.0,
             ),
             Expanded(
               flex: 2,
               child: Text(
                 label,
                 style: kAppBarTitleTextStyle,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(5),
+                child: IconButton(
+                  padding: EdgeInsets.all(40),
+                  alignment: Alignment.topRight,
+                  icon: Icon(
+                    Icons.home,
+                    size: 30,
+                    color: Colors.black,
+                  ),
+                  onPressed: _isLoading
+                      ? CircularProgressIndicator()
+                      : () {
+                          print("home");
+                          Navigator.pushNamed(context, '/user_type');
+                        },
+                ),
               ),
             ),
           ],

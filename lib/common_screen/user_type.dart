@@ -19,12 +19,12 @@ class UserType extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 150.0,
+              height: 70.0,
             ),
             GestureButton(
               label: 'STUDENT',
               onTap: () {
-                Navigator.pushNamed(context, '/user_student');
+                Navigator.pushNamed(context, '/student_login');
               },
             ),
             SizedBox(
@@ -33,7 +33,7 @@ class UserType extends StatelessWidget {
             GestureButton(
               label: 'FACULTY',
               onTap: () {
-                Navigator.pushNamed(context, '/user_faculty');
+                Navigator.pushNamed(context, '/faculty_login');
               },
             ),
           ],
