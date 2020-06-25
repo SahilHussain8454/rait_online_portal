@@ -67,4 +67,12 @@ class Auth with ChangeNotifier {
     print("inside login");
     return _authenticate(email, password, 'verifyPassword');
   }
+
+  void logout()
+  {
+    _token = null;
+    _userId = null;
+    _expiryDate = null;
+    notifyListeners();
+  }
 }

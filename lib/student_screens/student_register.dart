@@ -42,6 +42,23 @@ class _StudentRegisterState extends State<StudentRegister> {
     );
   }
 
+  void _showAuthDialog() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text('Successfully Signed In.'),
+        actions: <Widget>[
+          FlatButton(
+            child: Text('Okay'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/student_login');
+            },
+          )
+        ],
+      ),
+    );
+  }
+
   Future<void> _submit() async {
     print("Hello Student");
     if (!_formKey.currentState.validate()) {
@@ -59,7 +76,7 @@ class _StudentRegisterState extends State<StudentRegister> {
           _authData['email'],
           _authData['password'],
         );
-        Navigator.pushNamed(context, '/student_login');
+        // Navigator.pushNamed(context, '/student_login');
       }
     } on HttpException catch (error) {
       var errorMessage = 'Authentication failed';
@@ -83,6 +100,7 @@ class _StudentRegisterState extends State<StudentRegister> {
     setState(() {
       _isLoading = false;
     });
+    _showAuthDialog();
   }
 
   @override

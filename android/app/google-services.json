@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "692462968937",
+    "firebase_url": "https://flutter-update-77493.firebaseio.com",
+    "project_id": "flutter-update-77493",
+    "storage_bucket": "flutter-update-77493.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692462968937:android:a17b6b06461a06158402f8",
+        "android_client_info": {
+          "package_name": "com.example.rait_online_portal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692462968937-rrr37m18ht8n25pp580iu8e0uv94kufe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgW8E1OV7cJKDS5nx-tDedLlATYUxiIAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692462968937-rrr37m18ht8n25pp580iu8e0uv94kufe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

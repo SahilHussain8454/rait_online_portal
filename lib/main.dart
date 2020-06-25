@@ -7,9 +7,10 @@ import 'student_screens/student_register.dart';
 import 'package:rait_online_portal/faculty_screen/faculty_user.dart';
 import 'faculty_screen/faculty_login.dart';
 import 'faculty_screen/faculty_register.dart';
-import './providers/auth.dart';
-import './providers/auth_faculty.dart';
+import 'package:rait_online_portal/providers/auth.dart';
 import 'package:rait_online_portal/quiz_screen/student_quiz.dart';
+import 'package:rait_online_portal/quiz_screen/faculty_quiz.dart';
+
 void main() => runApp(RaitOnline());
 
 class RaitOnline extends StatelessWidget {
@@ -19,9 +20,6 @@ class RaitOnline extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(
           value: Auth(),
-        ),
-        ChangeNotifierProvider.value(
-          value: FacultyAuth(),
         ),
       ],
     child: MaterialApp(
@@ -36,6 +34,7 @@ class RaitOnline extends StatelessWidget {
           '/faculty_login': (context) => FacultyLogin(),
           '/faculty_register': (context) => FacultyRegister(),
           '/student_quiz': (context) => StudentQuiz(),
+          '/faculty_quiz': (context) => FacultyQuiz(),
         },
       ),
     );

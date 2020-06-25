@@ -42,8 +42,25 @@ class _FacultyRegisterState extends State<FacultyRegister> {
     );
   }
 
+  void _showAuthDialog() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text('Successfully Signed In.'),
+        actions: <Widget>[
+          FlatButton(
+            child: Text('Okay'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/faculty_login');
+            },
+          )
+        ],
+      ),
+    );
+  }
+
   Future<void> _submit() async {
-    print("Hello Faculty");
+    print("Hello Student");
     if (!_formKey.currentState.validate()) {
       // Invalid!
       return;
@@ -59,7 +76,7 @@ class _FacultyRegisterState extends State<FacultyRegister> {
           _authData['email'],
           _authData['password'],
         );
-        Navigator.pushNamed(context, '/faculty_login');
+        // Navigator.pushNamed(context, '/student_login');
       }
     } on HttpException catch (error) {
       var errorMessage = 'Authentication failed';
@@ -83,6 +100,7 @@ class _FacultyRegisterState extends State<FacultyRegister> {
     setState(() {
       _isLoading = false;
     });
+    _showAuthDialog();
   }
 
   @override
