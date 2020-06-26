@@ -12,12 +12,6 @@ class UserType extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
-              child: Text(
-                'Who\'s Accessing',
-                style: kPageHeadingTextStyle,
-              ),
-            ),
             SizedBox(
               height: 70.0,
             ),

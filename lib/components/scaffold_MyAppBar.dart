@@ -10,9 +10,10 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.red[900],
         centerTitle: true,
         title: Row(
           children: <Widget>[

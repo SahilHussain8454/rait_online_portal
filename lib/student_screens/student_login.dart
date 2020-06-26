@@ -107,24 +107,12 @@ class _StudentLoginState extends State<StudentLogin> {
                 builder: (ctx, auth, _) => Column(
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      'Login',
-                      style: kPageHeadingTextStyle,
-                    ),
                     SizedBox(
                       height: 100.0,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          'Username',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          // style: kButtonTextStyle,
-                        ),
                         SizedBox(
                           height: 10.0,
                         ),
@@ -133,15 +121,17 @@ class _StudentLoginState extends State<StudentLogin> {
                             left: 20.0,
                             right: 20.0,
                           ),
-                          color: Colors.teal,
+                          color: Colors.red[900],
                           alignment: Alignment.centerLeft,
                           height: 60.0,
                           child: TextFormField(
+                            
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 20.0,
                             ),
                             decoration: InputDecoration(
+                              labelText: 'Username *',
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.only(
                                 top: 14.0,
@@ -172,14 +162,6 @@ class _StudentLoginState extends State<StudentLogin> {
                         SizedBox(
                           height: 20.0,
                         ),
-                        Text(
-                          'Password',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          // style: kButtonTextStyle,
-                        ),
                         SizedBox(
                           height: 10.0,
                         ),
@@ -188,7 +170,7 @@ class _StudentLoginState extends State<StudentLogin> {
                             left: 20.0,
                             right: 20.0,
                           ),
-                          color: Colors.teal,
+                          color: Colors.red[900],
                           alignment: Alignment.centerLeft,
                           height: 60.0,
                           child: TextFormField(
@@ -208,6 +190,7 @@ class _StudentLoginState extends State<StudentLogin> {
                               fontSize: 20.0,
                             ),
                             decoration: InputDecoration(
+                              labelText: 'Password',
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.only(
                                 top: 14.0,
@@ -227,12 +210,15 @@ class _StudentLoginState extends State<StudentLogin> {
                           CircularProgressIndicator()
                         else
                           Container(
+                            
                             // padding: EdgeInsets.all(10),
                             width: double.infinity,
-                            height: 100,
+                            height: 130,
                             child: Column(
+                              
                               // mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                SizedBox(height:60 ,),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
@@ -242,7 +228,7 @@ class _StudentLoginState extends State<StudentLogin> {
                                       minWidth: 100,
                                       child: RaisedButton(
                                         textColor: Colors.black,
-                                        color: Colors.teal,
+                                        color: Colors.blueAccent,
                                         child: Text(
                                           "Login",
                                           style: TextStyle(
@@ -263,7 +249,7 @@ class _StudentLoginState extends State<StudentLogin> {
                                       minWidth: 100,
                                       child: RaisedButton(
                                         textColor: Colors.black,
-                                        color: Colors.teal,
+                                        color: Colors.blueAccent,
                                         child: Text(
                                           "Sign In",
                                           style: TextStyle(

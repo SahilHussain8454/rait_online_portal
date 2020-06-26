@@ -114,24 +114,12 @@ class _FacultyRegisterState extends State<FacultyRegister> {
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'Sign In',
-                style: kPageHeadingTextStyle,
-              ),
               SizedBox(
                 height: 50.0,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    'Username',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    // style: kButtonTextStyle,
-                  ),
                   SizedBox(
                     height: 10.0,
                   ),
@@ -140,15 +128,10 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                       left: 20.0,
                       right: 20.0,
                     ),
-                    color: Colors.teal,
-                    alignment: Alignment.centerLeft,
-                    height: 60.0,
+                    color: Colors.red[900],
                     child: TextFormField(
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
                       decoration: InputDecoration(
+                        labelText: 'Username',
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.only(
                           top: 14.0,
@@ -156,7 +139,7 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                         prefixIcon: Icon(
                           Icons.email,
                           color: Colors.black,
-                          size: 30.0,
+                          size: 25.0,
                         ),
                       ),
                       keyboardType: TextInputType.emailAddress,
@@ -172,16 +155,62 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                     ),
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 10.0,
                   ),
-                  Text(
-                    'Password',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                                  
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
                     ),
-                    // style: kButtonTextStyle,
+                    color: Colors.red[900],
+                    child: TextFormField(
+                      
+                      decoration: InputDecoration(
+                        labelText: 'Staff Id',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.only(
+                          top: 14.0,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 25.0,
+                        ),
+                      ),
+                      
+                    ),
                   ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                                  
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
+                    ),
+                    color: Colors.red[900],
+                    child: TextFormField(
+                      
+                      decoration: InputDecoration(
+                        labelText: 'Department',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.only(
+                          top: 14.0,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 25.0,
+                        ),
+                      ),
+                      
+                    ),
+                  ),
+                  
+                  
+                  
                   SizedBox(
                     height: 10.0,
                   ),
@@ -190,9 +219,7 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                       left: 20.0,
                       right: 20.0,
                     ),
-                    color: Colors.teal,
-                    alignment: Alignment.centerLeft,
-                    height: 60.0,
+                    color: Colors.red[900],
                     child: TextFormField(
                       obscureText: true,
                       controller: _passwordController,
@@ -205,11 +232,8 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                       onSaved: (value) {
                         _authData['password'] = value;
                       },
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
                       decoration: InputDecoration(
+                        labelText: 'Password',
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.only(
                           top: 14.0,
@@ -217,21 +241,10 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                         prefixIcon: Icon(
                           Icons.lock,
                           color: Colors.black,
-                          size: 30.0,
+                          size: 25.0,
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Text(
-                    'Conform Password',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    // style: kButtonTextStyle,
                   ),
                   SizedBox(
                     height: 10.0,
@@ -241,9 +254,7 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                       left: 20.0,
                       right: 20.0,
                     ),
-                    color: Colors.teal,
-                    alignment: Alignment.centerLeft,
-                    height: 60.0,
+                    color: Colors.red[900],
                     child: TextFormField(
                       obscureText: true,
                       validator: _authMode == AuthMode.Signup
@@ -254,11 +265,8 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                                 return null;
                             }
                           : null,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
                       decoration: InputDecoration(
+                        labelText: 'Confirmed Password',
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.only(
                           top: 14.0,
@@ -266,7 +274,7 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                         prefixIcon: Icon(
                           Icons.lock,
                           color: Colors.black,
-                          size: 30.0,
+                          size: 25.0,
                         ),
                       ),
                     ),
@@ -278,15 +286,19 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                     CircularProgressIndicator()
                   else
                     Container(
+                      
                       // padding: EdgeInsets.all(10),
-                      width: 120,
-                      height: 50,
+                        width: double.infinity,
+                        height: 130,
+                         
                       child: ButtonTheme(
                         height: 50,
                         minWidth: 100,
-                        child: RaisedButton(
+                        child:Column(children: <Widget>[
+                                          SizedBox(height:60 ,),
+                         RaisedButton(
                           textColor: Colors.black,
-                          color: Colors.teal,
+                          color: Colors.blueAccent,
                           child: Text(
                             "Sign In",
                             style: TextStyle(
@@ -298,6 +310,10 @@ class _FacultyRegisterState extends State<FacultyRegister> {
                             borderRadius: new BorderRadius.circular(30.0),
                           ),
                         ),
+                
+                        ],)
+                        
+                        
                       ),
                     ),
                 ],

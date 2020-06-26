@@ -10,7 +10,7 @@ class GestureButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        color: Colors.teal,
+        color: Colors.red[900],
         child: Center(
           child: Text(
             label,

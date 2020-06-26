@@ -107,24 +107,12 @@ class _FacultyLoginState extends State<FacultyLogin> {
                 builder: (ctx, auth, _) => Column(
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      'Login',
-                      style: kPageHeadingTextStyle,
-                    ),
                     SizedBox(
                       height: 100.0,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          'Username',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          // style: kButtonTextStyle,
-                        ),
                         SizedBox(
                           height: 10.0,
                         ),
@@ -133,7 +121,7 @@ class _FacultyLoginState extends State<FacultyLogin> {
                             left: 20.0,
                             right: 20.0,
                           ),
-                          color: Colors.teal,
+                          color: Colors.red[900],
                           alignment: Alignment.centerLeft,
                           height: 60.0,
                           child: TextFormField(
@@ -142,6 +130,7 @@ class _FacultyLoginState extends State<FacultyLogin> {
                               fontSize: 20.0,
                             ),
                             decoration: InputDecoration(
+                              labelText: 'Username',
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.only(
                                 top: 14.0,
@@ -172,14 +161,6 @@ class _FacultyLoginState extends State<FacultyLogin> {
                         SizedBox(
                           height: 20.0,
                         ),
-                        Text(
-                          'Password',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          // style: kButtonTextStyle,
-                        ),
                         SizedBox(
                           height: 10.0,
                         ),
@@ -188,7 +169,7 @@ class _FacultyLoginState extends State<FacultyLogin> {
                             left: 20.0,
                             right: 20.0,
                           ),
-                          color: Colors.teal,
+                          color: Colors.red[900],
                           alignment: Alignment.centerLeft,
                           height: 60.0,
                           child: TextFormField(
@@ -208,6 +189,7 @@ class _FacultyLoginState extends State<FacultyLogin> {
                               fontSize: 20.0,
                             ),
                             decoration: InputDecoration(
+                              labelText: 'Password',
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.only(
                                 top: 14.0,
@@ -229,20 +211,23 @@ class _FacultyLoginState extends State<FacultyLogin> {
                           Container(
                             // padding: EdgeInsets.all(10),
                             width: double.infinity,
-                            height: 100,
+                            height: 190,
                             child: Column(
+                              
+                              
                               // mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
+                                      
                                   children: [
                                     ButtonTheme(
                                       height: 50,
                                       minWidth: 100,
                                       child: RaisedButton(
                                         textColor: Colors.black,
-                                        color: Colors.teal,
+                                        color: Colors.blueAccent,
                                         child: Text(
                                           "Login",
                                           style: TextStyle(
@@ -263,7 +248,7 @@ class _FacultyLoginState extends State<FacultyLogin> {
                                       minWidth: 100,
                                       child: RaisedButton(
                                         textColor: Colors.black,
-                                        color: Colors.teal,
+                                        color: Colors.blueAccent,
                                         child: Text(
                                           "Sign In",
                                           style: TextStyle(

@@ -14,13 +14,15 @@ class StudentRegister extends StatefulWidget {
 }
 
 class _StudentRegisterState extends State<StudentRegister> {
+  
   final GlobalKey<FormState> _formKey = GlobalKey();
   AuthMode _authMode = AuthMode.Signup;
   Map<String, String> _authData = {
     'email': '',
     'password': '',
   };
-
+var _div=['A','B'];
+ var _currentItemSelected='A';
   var _isLoading = false;
   final _passwordController = TextEditingController();
 
@@ -111,27 +113,14 @@ class _StudentRegisterState extends State<StudentRegister> {
         containerContent: Container(
             child: Form(
           key: _formKey,
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Sign In',
-                style: kPageHeadingTextStyle,
-              ),
-              SizedBox(
-                height: 50.0,
-              ),
-              Column(
+          child: Container(
+            margin: EdgeInsets.all(20),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+  Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    'Username',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    // style: kButtonTextStyle,
-                  ),
                   SizedBox(
                     height: 10.0,
                   ),
@@ -140,15 +129,11 @@ class _StudentRegisterState extends State<StudentRegister> {
                       left: 20.0,
                       right: 20.0,
                     ),
-                    color: Colors.teal,
-                    alignment: Alignment.centerLeft,
-                    height: 60.0,
+                    color: Colors.red[900],
+                    
                     child: TextFormField(
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
                       decoration: InputDecoration(
+                        labelText: 'Username',
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.only(
                           top: 14.0,
@@ -156,7 +141,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                         prefixIcon: Icon(
                           Icons.email,
                           color: Colors.black,
-                          size: 30.0,
+                          size: 25.0,
                         ),
                       ),
                       keyboardType: TextInputType.emailAddress,
@@ -171,29 +156,178 @@ class _StudentRegisterState extends State<StudentRegister> {
                       },
                     ),
                   ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Text(
-                    'Password',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    // style: kButtonTextStyle,
-                  ),
+                  
                   SizedBox(
                     height: 10.0,
                   ),
+                                  
                   Container(
                     margin: EdgeInsets.only(
                       left: 20.0,
                       right: 20.0,
                     ),
-                    color: Colors.teal,
-                    alignment: Alignment.centerLeft,
-                    height: 60.0,
+                    color: Colors.red[900],
                     child: TextFormField(
+                      
+                      decoration: InputDecoration(
+                        labelText: 'Roll No',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.only(
+                          top: 14.0,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 25.0,
+                        ),
+                      ),
+                      
+                    ),
+                  ),
+                  
+                  SizedBox(
+                    height: 10.0,
+                  ),
+  
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
+                    ),
+                    color: Colors.red[900],
+                   child: TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Department',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.only(
+                          top: 14.0,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 25.0,
+                        ),
+                      ),
+                      
+                    ),
+                  ),
+                  
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                
+                                
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
+                    ),
+                    color: Colors.red[900],
+                 child: TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Year',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.only(
+                          top: 14.0,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 25.0,
+                        ),
+                      ),
+                      
+                    ),
+                  ),
+                  
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                                  
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
+                    ),
+                    color: Colors.red[900],
+                    child:Row(
+                     crossAxisAlignment: CrossAxisAlignment.center, 
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                      
+                        Text('Division',style: TextStyle(
+                          
+                        ),
+                        ),
+                    DropdownButton<String>(
+                      items:_div.map((String dropDownStringItem){
+                        return DropdownMenuItem<String>(
+                          value:dropDownStringItem,
+                          child:Text(dropDownStringItem), 
+                        );
+                      }).toList(), onChanged: (String newValueSelected) {
+                          setState(() {
+                            this._currentItemSelected=newValueSelected;
+                          });
+                        },
+                      
+                      value:_currentItemSelected,
+                      
+                      )
+                    ],)
+                    
+                    
+                     
+                  ),
+                  
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
+                    ),
+                    color: Colors.red[900],
+                    /*alignment: Alignment.centerLeft,
+                    height: 60.0,
+                    */child: TextFormField(
+                    /*  style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      ),*/
+                      decoration: InputDecoration(
+                        labelText: 'Batch',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.only(
+                          top: 14.0,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 25.0,
+                        ),
+                      ),
+                      
+                    ),
+                  ),
+                  
+                  SizedBox(
+                    height: 10.0,
+                  ),
+  
+
+                  
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
+                    ),
+                    color: Colors.red[900],
+                /*    alignment: Alignment.centerLeft,
+                    height: 60.0,
+                  */  child: TextFormField(
                       obscureText: true,
                       controller: _passwordController,
                       validator: (value) {
@@ -205,11 +339,13 @@ class _StudentRegisterState extends State<StudentRegister> {
                       onSaved: (value) {
                         _authData['password'] = value;
                       },
-                      style: TextStyle(
+                    /*  style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
-                      ),
+                      ),*/
                       decoration: InputDecoration(
+                        
+                         labelText: 'Password',
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.only(
                           top: 14.0,
@@ -217,21 +353,10 @@ class _StudentRegisterState extends State<StudentRegister> {
                         prefixIcon: Icon(
                           Icons.lock,
                           color: Colors.black,
-                          size: 30.0,
+                          size: 25.0,
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Text(
-                    'Conform Password',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    // style: kButtonTextStyle,
                   ),
                   SizedBox(
                     height: 10.0,
@@ -241,10 +366,11 @@ class _StudentRegisterState extends State<StudentRegister> {
                       left: 20.0,
                       right: 20.0,
                     ),
-                    color: Colors.teal,
+                    color: Colors.red[900],
+                    /*
                     alignment: Alignment.centerLeft,
                     height: 60.0,
-                    child: TextFormField(
+                    */child: TextFormField(
                       obscureText: true,
                       validator: _authMode == AuthMode.Signup
                           ? (value) {
@@ -254,11 +380,12 @@ class _StudentRegisterState extends State<StudentRegister> {
                                 return null;
                             }
                           : null,
-                      style: TextStyle(
+                     /* style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
-                      ),
+                      ),*/
                       decoration: InputDecoration(
+                         labelText: 'Confirm Password',
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.only(
                           top: 14.0,
@@ -266,13 +393,13 @@ class _StudentRegisterState extends State<StudentRegister> {
                         prefixIcon: Icon(
                           Icons.lock,
                           color: Colors.black,
-                          size: 30.0,
+                          size: 25.0,
                         ),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 10.0,
                   ),
                   if (_isLoading)
                     CircularProgressIndicator()
@@ -286,7 +413,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                         minWidth: 100,
                         child: RaisedButton(
                           textColor: Colors.black,
-                          color: Colors.teal,
+                          color: Colors.blueAccent,
                           child: Text(
                             "Sign In",
                             style: TextStyle(
@@ -302,7 +429,60 @@ class _StudentRegisterState extends State<StudentRegister> {
                     ),
                 ],
               ),
-            ],
+ 
+             /* 
+                  TextField(decoration:
+                     InputDecoration(labelText: 'Name'),
+                     onChanged:(val){ },
+                     ),
+                  
+              
+                    TextField(decoration:
+                     InputDecoration(labelText: 'Email'),
+                     onChanged:(val){ },
+                    
+                    
+                    
+                     ),
+                 
+
+                     TextField(decoration:
+                     InputDecoration(labelText: 'Roll No'),
+                     onChanged:(val){ },
+                     ),
+
+                    TextField(decoration:
+                     InputDecoration(labelText: 'Department'),
+                    ),
+
+                    
+                    TextField(decoration:
+                     InputDecoration(labelText: 'Year'),
+                    ),
+
+                  
+                    TextField(decoration:
+                     InputDecoration(labelText: 'Division'),
+                    ),
+
+                    TextField(decoration:
+                     InputDecoration(labelText: 'Batch'),
+                    ),
+
+                  
+                    TextField(decoration:
+                     InputDecoration(labelText: 'Password'),
+                    ),
+
+                     TextField(decoration:
+                     InputDecoration(labelText: 'Confirmed Password'),
+                     onChanged:(val){ },
+                     ),
+                  
+                  
+*/
+              ],
+            ),
           ),
         )),
       ),
